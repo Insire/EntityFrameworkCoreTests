@@ -17,12 +17,15 @@ namespace EntityFrameworkCore.Domain
         [MaxLength(200)]
         public string Description { get; set; }
 
-        public ICollection<Tag> Tags { get; set; }
+        public int AnimeDetailsId { get; set; }
+        public AnimeDetails AnimeDetails { get; set; }
+
+        public ICollection<AnimeTag> AnimeTags { get; set; }
         public ICollection<Episode> Episodes { get; set; }
 
         public Anime()
         {
-            Tags = new List<Tag>();
+            AnimeTags = new List<AnimeTag>();
             Episodes = new List<Episode>();
         }
     }
